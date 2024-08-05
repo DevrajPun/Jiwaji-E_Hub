@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  font-optical-sizing: auto;
+  background: #f6f9ff;
+  color: #444444;
+  background: linear-gradient(to right, #e0eafc, #cfdef3) !important;
+}
+
+
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-meta {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s;
+}
+
+.pagination .page-link {
+  color: #007bff;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.additional-content {
+  display: none;
+}
+
+.blog-container {
+  background-color: #f8f9fa;
+  width: 70vw;
+  padding: 2rem;
+  margin-block: 2rem;
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    width: 90vw;
+    /* Adjust width for smaller screens */
+    padding: 1rem;
+    /* Adjust padding for smaller screens */
+    margin-block: 1rem;
+    /* Adjust margin for smaller screens */
+  }
+}
+
+.writer-avatar {
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}

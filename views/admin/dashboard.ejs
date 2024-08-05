@@ -1,0 +1,195 @@
+<%- include("header.ejs") %>
+  <%- include("sidebar.ejs") %>
+    <main id="main" class="main">
+
+      <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/admin-dashboard">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </nav>
+      </div><!-- End Page Title -->
+
+      <section class="section dashboard">
+        <div class="row">
+
+          <!-- Left side columns -->
+          <div class="col-lg-12">
+            <div class="row">
+
+              <!-- Books Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card sales-card">
+
+                  <div class="card-body">
+                    <h5 class="card-title">Total Books</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-book"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>
+                          <%= bookList.length%>
+                        </h6>
+
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div><!-- End Books Card -->
+
+              <!--  Blog Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card revenue-card">
+
+                  <div class="card-body">
+                    <h5 class="card-title">Total Blogs</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-file-text"></i>
+
+                      </div>
+                      <div class="ps-3">
+                        <h6>
+                          <%= blogs %>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div><!-- End Revenue Card -->
+
+              <!-- Users Card -->
+              <div class="col-xxl-4 col-xl-12">
+
+                <div class="card info-card customers-card">
+
+                  <div class="card-body">
+                    <h5 class="card-title">Total Users</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>
+                          <%= userList.length%>
+                        </h6>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div><!-- End Customers Card -->
+
+
+              <div class="col-12">
+                <div class="card recent-sales overflow-auto">
+                  <div class="card-body">
+                    <h5 class="card-title">User List</h5>
+
+                    <table class="table table-borderless datatable">
+                      <thead>
+                        <tr>
+                          <th scope="col">Enrollment/AdminID</th>
+                          <th scope="col">Full Name</th>
+                          <th scope="col">Role(Dept)</th>
+                          <th scope="col">Phone</th>
+                          <th scope="col">Email</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% userList.forEach(user=> { %>
+                          <tr>
+                            <td>
+                              <%= user.enrollmentNumber %>
+                            </td>
+                            <td>
+                              <%= user.fullName %>
+                            </td>
+                            <td>
+                              <%= user.course %>
+                            </td>
+                            <td>
+                              <% if(user.phoneNumber){ %>
+                                <%= user.phoneNumber %>
+                                  <% }else{ %>
+                                    NILL
+                                    <% }%>
+                            </td>
+                            <td>
+                              <% if(user.email){ %>
+                                <%= user.email %>
+                                  <% }else{ %>
+                                    NILL
+                                    <% }%>
+                            </td>
+                          </tr>
+                          <% }); %>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="col-12">
+                <div class="card top-selling overflow-auto">
+                  <div class="card-body pb-0">
+                    <h5 class="card-title">Books List <span>| All</span></h5>
+
+                    <table class="table table-borderless">
+                      <thead>
+                        <tr>
+                          <th scope="col">Image</th>
+                          <th scope="col">Book Name</th>
+                          <th scope="col">Author Name</th>
+                          <th scope="col">Course</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% bookList.forEach(book=> { %>
+                          <tr>
+                            <th scope="row"><a href="#"><img src="<%= book.coverImage %>" alt=""></a>
+                            </th>
+                            <td><a href="<%= book.bookUrl %>" class="text-primary fw-bold">
+                                <%= book.title %>
+                              </a></td>
+                            <td>
+                              <%= book.author %>
+                            </td>
+                            <td>
+                              <span class="bage bage-secondary">
+                                <%= book.course %>
+                              </span>
+                            </td>
+                          </tr>
+                          <% }) %>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+              </div><!-- End Top Selling -->
+
+            </div>
+          </div><!-- End Left side columns -->
+
+        </div>
+      </section>
+
+    </main><!-- End #main -->
+    <%- include('footer.ejs') %>

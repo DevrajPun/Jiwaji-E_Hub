@@ -1,0 +1,30 @@
+{
+  "name": "Jiwaji E-hub",
+  "version": "1.0.0",
+  "description": "E-Library For SOS in Computer Science And Applications",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Devraj & Esha",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.2.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.1.0",
+    "html-loader": "^5.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.3"
+  }
+}
